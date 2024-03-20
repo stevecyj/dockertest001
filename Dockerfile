@@ -7,4 +7,7 @@ RUN rm -rf /var/cache/apk/*
 RUN echo "<h3>I am ${whoami}</h3>" >> index.html
 RUN echo "<h3>I am ${whoami}</h3>" >> index.html
 RUN echo "<h3>I am ${whoami}</h3>" >> index.html
+COPY ./content.txt ./
+RUN ls -l ./
+RUN cat ./content.txt >> index.html
 ENTRYPOINT ["httpd", "-D", "FOREGROUND"]
